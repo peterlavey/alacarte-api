@@ -6,6 +6,7 @@ const serverless = require("serverless-http");
 
 // Middlewares
 app.use(cors());
+app.use(express.json());
 
 // Routes
 const router = express.Router();
