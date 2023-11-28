@@ -11,7 +11,7 @@ const saveFile = (req, res) => {
 };
 
 const readFile = (req, res) => {
-    fs.readFile("./+dist/data/cartes.json", (err, data) => {
+    fs.readFile("./dist/data/cartes.json", (err, data) => {
         if (err)
             res.send(err);
         else {
