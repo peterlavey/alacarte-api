@@ -1,9 +1,11 @@
 const fs = require("fs");
+const {join} = require("path");
+const dirPath = join(process.cwd(), '/dist/data');
 
 const saveFile = (req, res) => {
     const data = JSON.stringify(req.body);
     try {
-        fs.writeFileSync("./dist/data/cartes.json", data);
+        fs.writeFileSync(`${dirPath}/cartes.json`, data);
         res.send(data);
     } catch (err) {
         res.send(err);
@@ -11,7 +13,7 @@ const saveFile = (req, res) => {
 };
 
 const readFile = (req, res) => {
-    fs.readFile("./dist/data/cartes.json", (err, data) => {
+    fs.readFile(`${dirPath}/cartes.json`, (err, data) => {
         if (err)
             res.send(err);
         else {
