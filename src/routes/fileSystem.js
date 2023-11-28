@@ -3,9 +3,9 @@ const fs = require("fs");
 const saveFile = (req, res) => {
     const data = JSON.stringify(req.body);
     fs.writeFile("data.json", data, err => {
-        if (err)
+        if (err) {
             res.send(err);
-        else {
+        } else {
             res.send(data);
         }
     });
